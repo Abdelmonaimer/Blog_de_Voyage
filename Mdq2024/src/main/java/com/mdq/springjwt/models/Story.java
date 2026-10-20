@@ -21,8 +21,37 @@ public class Story {
 	 private String title;
 	 
 	 private String content;
-	 
-	 //@OneToMany(mappedBy = "story", fetch = FetchType.LAZY)
+	 private String city;
+
+	 private String photo;
+
+	 private String author;
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	//@OneToMany(mappedBy = "story", fetch = FetchType.LAZY)
 	 //@ManyToOne
 	 //@JoinColumn(name = "photo_id")
 	 //private Photo photo; 
@@ -64,6 +93,15 @@ public class Story {
 		this.title = title;
 		this.content = content;
 		
+	}
+	public Story(Long storyId, String title, String content,String city, String photo, String author) {
+		this.storyId = storyId;
+		this.title = title;
+		this.content = content;
+		this.city = city;
+		this.photo = photo;
+		this.author = author;
+
 	}
 
 	public Story() {

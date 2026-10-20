@@ -19,6 +19,9 @@ public class Comment {
 	 private Long commentId;
 	 
 	 private String text;
+	 private String commentator;
+
+
 
 	 //@ManyToOne
 	 //@JoinColumn(name = "story_id") // Adjust this based on your actual column name
@@ -52,8 +55,15 @@ public class Comment {
 		this.story = story;
 	}
 
-	
-	public Comment(Long commentId, String text,Story story) {
+	public String getCommentator() {
+		return commentator;
+	}
+
+	public void setCommentator(String commentator) {
+		this.commentator = commentator;
+	}
+
+	public Comment(Long commentId, String text, Story story) {
 		this.commentId = commentId;
 		this.text = text;
 		this.story = story;
@@ -67,9 +77,10 @@ public class Comment {
 	public Comment() {
 	}
 
-	public Comment(String text, Story story) {
+	public Comment(String text,String commentator, Story story) {
 		this.text = text;
 		this.story = story;
+		this.commentator = commentator;
 	}
 	 
 	 

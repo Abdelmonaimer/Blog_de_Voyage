@@ -47,6 +47,11 @@ public class CommentController {
 	        return commentService.findById(id);
 	    }
 
+		@GetMapping("/story/{id}")
+		public List<Comment> findCommentsByStoryId(@PathVariable Long id){
+			return commentService.findCommentsByStoryId(id);
+		}
+
 	    @DeleteMapping("/delete/{id}")
 	    public void deleteById(@PathVariable Long id) {
 	    	commentService.deleteById(id);

@@ -5,8 +5,12 @@ import org.springframework.stereotype.Repository;
 
 import com.mdq.springjwt.models.Story;
 
+import java.util.List;
+
 
 @Repository
 public interface StoryRepository extends JpaRepository<Story, Long>{
+
+    List<Story> findStoriesByAuthor(String author);
 
 }

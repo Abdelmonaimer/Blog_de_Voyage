@@ -32,4 +32,18 @@ public class StoryService {
     	storyRepository.save(story);
     }
 
+    public List<Story> findStoriesByAuthor(String author){
+       return storyRepository.findStoriesByAuthor(author);
+    };
+
+    public Story findLastStory() {
+        List<Story> stories = storyRepository.findAll();
+
+        if (!stories.isEmpty()) {
+            return stories.get(stories.size() - 1);
+        } else {
+            return null; // or throw an exception, depending on your requirements
+        }
+    }
+
 }

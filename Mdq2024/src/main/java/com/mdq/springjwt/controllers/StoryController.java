@@ -31,6 +31,14 @@ public class StoryController {
 	    public List<Story> findAll() {
 	        return storyService.findAll();
 	    }
+	@GetMapping("/author/{author}")
+	public List<Story> findStoriesByAuthor(@PathVariable String author) {
+		return storyService.findStoriesByAuthor(author);
+	}
+	@GetMapping("/last")
+	public Story getLastStory() {
+		return storyService.findLastStory();
+	}
 
 	    @PostMapping("/save")
 	    public Story save(@RequestBody Story entity) {
